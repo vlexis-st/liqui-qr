@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: liqui-qr
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: FIRESTORE_COLLECTION_NAME
+        value: registros_qr
+      - key: ALLOW_LOCAL_QR
+        value: false

@@ -1,0 +1,36 @@
+{
+  "name": "talana-liquidacion-pdf-generator",
+  "version": "1.0.0",
+  "description": "Generador de PDF de liquidaciones de Talana con QR dinámico e integración Firebase",
+  "main": "src/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/index.js",
+    "example": "node examples/example.js",
+    "example:advanced": "node examples/advanced-example.js",
+    "server": "node examples/api-server.js",
+    "verify": "node scripts/verify-setup.js",
+    "dev": "nodemon src/index.js"
+  },
+  "keywords": [
+    "pdf",
+    "liquidacion",
+    "talana",
+    "qr",
+    "firebase"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@google-cloud/firestore": "^8.3.0",
+    "dotenv": "^16.3.1",
+    "express": "^5.2.1",
+    "firebase-admin": "^12.0.0",
+    "puppeteer": "^21.6.0",
+    "qrcode": "^1.5.3",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
