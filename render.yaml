@@ -3,10 +3,12 @@ services:
     name: liqui-qr
     env: node
     plan: free
-    buildCommand: npm install
+    buildCommand: npm ci --omit=dev --no-audit --no-fund
     startCommand: node server.js
     autoDeploy: true
     envVars:
+      - key: NODE_VERSION
+        value: 20.11.1
       - key: NODE_ENV
         value: production
       - key: FIRESTORE_COLLECTION_NAME
