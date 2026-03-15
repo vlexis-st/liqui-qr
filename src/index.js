@@ -27,9 +27,8 @@ function initializeFirebase() {
 }
 
 /**
- * Obtiene una URL base pública para QR.
- * Requiere PUBLIC_BASE_URL para uso global.
- * Para desarrollo local, se puede usar ALLOW_LOCAL_QR=true.
+ * Obtiene la URL pública base para construir el enlace del QR.
+ * Requiere PUBLIC_BASE_URL en producción.
  */
 function resolvePublicBaseUrl() {
   const configured = process.env.PUBLIC_BASE_URL?.trim();
@@ -43,7 +42,7 @@ function resolvePublicBaseUrl() {
   }
 
   throw new Error(
-    'PUBLIC_BASE_URL no está configurada. Para que el QR funcione desde cualquier dispositivo, define PUBLIC_BASE_URL con tu dominio público (por ejemplo: https://miapp.onrender.com). Para pruebas locales, usa ALLOW_LOCAL_QR=true.'
+    'PUBLIC_BASE_URL no está configurada. Define PUBLIC_BASE_URL con tu dominio público (ej: https://liqui-qr.onrender.com).'
   );
 }
 
@@ -869,5 +868,4 @@ module.exports = {
   generatePDFBuffer,
   saveQRDataToFirestore,
   initializeFirebase,
-  resolvePublicBaseUrl,
 };
